@@ -1,0 +1,120 @@
+Test Case ID: TC_01
+Title: Valid login with standard_user
+
+Preconditions: 
+•	User is on login page
+
+Steps: 
+1.	Enter username: standard_user
+2.	Enter password: secret_sauce
+3.	Click login
+
+Expected Result:
+•	User is redirected to inventory page
+•	URL contains /inventory.html
+•	Products list is visible
+•	Shopping cart icon is displayed
+
+Actual Result:
+•	User is redirected to inventory page
+•	URL is correct
+•	Products list is visible
+
+Test Case ID: TC_02
+Title: Login attempt with locked_out_user
+
+Preconditions:
+•	User is on login page
+
+Steps:
+1.	Enter username: locked_out_user
+2.	Enter password: secret_sauce
+3.	Click login
+
+Expected Result:
+•	User should NOT be able to log in
+•	Error message should be displayed
+
+Actual Result:
+•	User is not logged in
+•	User is not redirected to inventory page
+•	Error message is visible:  “Epic sadface: Sorry, this user has been locked out.”
+
+Bug Report
+Title: Locked out user can attempt login instead of being blocked earlier
+
+Severity: Medium
+
+Steps:
+1.	Enter locked_out_user
+2.	Enter password
+3.	Click login
+
+Actual Result: 
+Error message is displayed
+
+Expected Result:
+System should prevent login attempt or display a clearer message
+
+Test Case ID: TC_03
+Title: Valid login with problem_user
+
+Preconditions:
+•	User is on login page
+
+Steps:
+1.	Enter username: problem_user
+2.	Enter password: secret_sauce
+3.	Click login
+
+Expected Result:
+•	User is redirected to inventory page
+•	URL contains /inventory.html
+•	Product list is visible
+•	Shopping cart icon is displayed
+
+Actual Result:
+•	User is redirected to inventory page
+•	URL contains /inventory.html
+•	Product list is visible
+•	Shopping cart displayed
+
+Test Case ID: TC_04
+Title: Invalid login with STANDARD_USER
+
+Preconditions:
+•	User is on login page
+
+Steps:
+1.	Enter username: STANDARD_USER
+2.	Enter password: secret_sauce
+3.	Click login
+
+Expected Result:
+•	User is not redirected to inventory page
+•	Error message is visible 
+
+Actual Result:
+•	User is not redirected to inventory page
+•	Error message: “Epic sadface: Username and password do not match any user in this service”
+
+Test Case ID: TC_05
+Title: Login attempt with invalid credentials
+
+Preconditions:
+•	User is on login page
+
+Steps:
+1.	Enter username: 1390781239081203981209381209381209381209831
+2.	Enter password: 1390781239081203981209381209381209381209831
+3.	Click login
+
+Expected Result:
+•	User is not redirected to inventory domain
+•	User is not logged in
+•	Error is visible
+
+Actual Result:
+•	User is not redirected to inventory domain
+•	User is not logged in
+•	Error message: “Epic sadface: Username and password do not match any user in this service”
